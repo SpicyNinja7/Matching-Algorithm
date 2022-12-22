@@ -1,10 +1,11 @@
-
+# a dict of Group A with their list of preferences
 preference_a = {
     "A":["1","2","4","3"],
     "B":["3","4","3","4"],
     "C":["1","3","4","2"],
     "D":["2","1","4","3"]
 }
+# a dict of Group B with their list of preferences
 preference_b = {
     "1":["A","C","D","B"],
     "2":["A","D","C","B"],
@@ -12,12 +13,14 @@ preference_b = {
     "4":["D","A","B","C"]
 }
 
+# initialising other variables
 matching={}
 prev_matching={}
 list_of_matched_sideB =[]
 for a in preference_a.keys():
     matching[a]=''
 
+# Matching Algorithm starts
 while True:
     for a in preference_a.keys():
         prev_matching[a] = matching[a]
@@ -46,7 +49,8 @@ while True:
 
     print("\nB rejects A...")
     print(matching)
-
+    
+    # Stops whenever there are no changes of matching list from previous iteration
     if prev_matching == matching:
         break
 
